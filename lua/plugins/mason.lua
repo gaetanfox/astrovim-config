@@ -1,4 +1,4 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- Customize Mason plugins
 
@@ -32,6 +32,10 @@ return {
     opts = {
       ensure_installed = {
         "python",
+        "javascript",
+        "typescript",
+        "html",
+        "css"
         -- add more arguments for adding more debuggers
       },
     },
