@@ -35,7 +35,7 @@ return {
         "javascript",
         "typescript",
         "html",
-        "css"
+        "css",
         -- add more arguments for adding more debuggers
       },
     },

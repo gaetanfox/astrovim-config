@@ -14,6 +14,10 @@ if not pcall(require, "lazy") then
   vim.fn.getchar()
   vim.cmd.quit()
 end
+-- my keymaps
+-- Remap jj or jk to escape insert mode
+vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = true, silent = true })
 
 require "lazy_setup"
 require "polish"
