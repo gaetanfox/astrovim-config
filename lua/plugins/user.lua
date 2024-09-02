@@ -89,4 +89,8 @@ return {
   {
     "wakatime/vim-wakatime",
   },
+  {
+    "kylechui/nvim-surround",
+    opts = {},
+  },
 }
