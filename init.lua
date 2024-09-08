@@ -19,5 +19,23 @@ end
 vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "jk", "<Esc>", { noremap = true, silent = true })
 
+-- Define a Lua function to remove comments
+local function remove_python_comments()
+  -- Remove single-line comments
+  vim.cmd [[%s/^\s*#.*//g]]
+  -- Remove multi-line comments with '''
+  vim.cmd [[silent! %s/\v(''')[\s\S]+%1//g]]
+  -- Remove multi-line comments with """
+  vim.cmd [[silent! %s/\v(""")[\s\S]+%1//g]]
+end
+-- Map the function to a key combination in normal mode
+vim.api.nvim_set_keymap("n", "<leader>fs", "<cmd>lua remove_python_comments()<CR>", { noremap = true, silent = true })
+
+-- Map the function to a key combination in normal mode
+vim.api.nvim_set_keymap("n", "<leader>rc", "<cmd>lua remove_python_comments()<CR>", { noremap = true, silent = true })
+
+-- Map the function to a key combination in insert mode (if needed)
+vim.api.nvim_set_keymap("i", "<C-r>", "<Esc><cmd>lua remove_python_comments()<CR>", { noremap = true, silent = true })
+
 require "lazy_setup"
 require "polish"
