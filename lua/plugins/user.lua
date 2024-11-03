@@ -293,7 +293,7 @@ return {
   {
     "mbbill/undotree",
     -- opts = {},
-    config = function() vim.keymap.set("n", "<C-u>", vim.cmd.UndotreeToggle) end,
+    config = function() vim.keymap.set("n", "<A-S-a>", vim.cmd.UndotreeToggle) end,
     -- config = vim.keymap.set("n", "<C-u>", vim.cmd.UndotreeToggle),
   },
 }
