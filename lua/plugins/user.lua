@@ -292,8 +292,15 @@ return {
   },
   {
     "mbbill/undotree",
-    -- opts = {},
-    config = function() vim.keymap.set("n", "<A-S-a>", vim.cmd.UndotreeToggle) end,
-    -- config = vim.keymap.set("n", "<C-u>", vim.cmd.UndotreeToggle),
+    config = function()
+      vim.g.undotree_SetFocusWhenToggle = 1
+      vim.keymap.set("n", "<leader>h", vim.cmd.UndotreeToggle)
+    end,
+
+    -- config = vim.keymap.set("n", "<C-s>a", vim.cmd.UndotreeToggle),
+    -- config = vim.keymap.set("n", "<leader>h", vim.cmd.UndotreeToggle),
+  },
+  {
+    "Raimondi/delimitMate",
   },
 }

@@ -30,6 +30,12 @@ local function remove_python_comments()
 end
 -- Map the function to a key combination in normal mode
 vim.api.nvim_set_keymap("n", "<leader>fs", "<cmd>lua remove_python_comments()<CR>", { noremap = true, silent = true })
-
+-- inoremap
+vim.api.nvim_set_keymap(
+  "i",
+  "<C-j> <C-\\> <C-n>",
+  ":call search('[>)]}\"'']', 'W')<C-s>a",
+  { noremap = true, silent = true }
+)
 require "lazy_setup"
 require "polish"
